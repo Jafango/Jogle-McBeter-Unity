@@ -12,8 +12,8 @@ public class Item : MonoBehaviour
     public Sprite icon;
     public bool picked;
 
-    void Start()
+    void update()
     {
-        picked = false;
+        
     }
 }
