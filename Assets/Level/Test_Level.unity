@@ -3964,6 +3964,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 771169599825909801, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
+      propertyPath: sprintMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4184970128541443503, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8331671
@@ -7862,22 +7866,6 @@ PrefabInstance:
     - target: {fileID: 2901283594149704626, guid: 37ae96ebf25f6964598d9e4ce558200d, type: 3}
       propertyPath: m_Name
       value: TestPickupItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 2901283594149704626, guid: 37ae96ebf25f6964598d9e4ce558200d, type: 3}
-      propertyPath: m_TagString
-      value: Item
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608801623516995386, guid: 37ae96ebf25f6964598d9e4ce558200d, type: 3}
-      propertyPath: icon
-      value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 4608801623516995386, guid: 37ae96ebf25f6964598d9e4ce558200d, type: 3}
-      propertyPath: type
-      value: Test
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608801623516995386, guid: 37ae96ebf25f6964598d9e4ce558200d, type: 3}
-      propertyPath: description
-      value: Test Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
