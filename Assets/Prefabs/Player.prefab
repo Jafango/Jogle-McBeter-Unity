@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
-  sprintMultiplier: 1.5
+  sprintMultiplier: 2
   lerpAmount: 0.05
 --- !u!114 &6568420332036442392
 MonoBehaviour:
@@ -211,5 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryCanvasEnabled: 0
   inventory: {fileID: 0}
-  slot: []
+  slot:
+  - {fileID: 0}
+  - {fileID: 0}
   slotHolder: {fileID: 0}

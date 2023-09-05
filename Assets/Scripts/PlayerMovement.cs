@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Player
     public float movementSpeed = 4f;
-    public float sprintMultiplier = 1.5f;
+    public float sprintMultiplier = 2f;
     public float lerpAmount = 0.05f;
     float horizontalInput;
     float verticalInput;
@@ -30,6 +30,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(horizontalInput, verticalInput).normalized * movementSpeed, lerpAmount);
+        if(Input.GetButton("Fire1"))
+        {
+            rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(horizontalInput, verticalInput).normalized * (movementSpeed * sprintMultiplier), lerpAmount);
+        }
+        else
+        {
+            rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(horizontalInput, verticalInput).normalized * movementSpeed, lerpAmount);
+        }
     }
 }
