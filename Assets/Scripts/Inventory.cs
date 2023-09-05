@@ -65,13 +65,12 @@ public class Inventory : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Checks the other objects tag to make sure it is an item
-        if (other.tag == "Item")
+        if (collision.gameObject.tag == "Item")
         {
             // Defines the item picked up for a bit to be placed in the inventory
-            GameObject itemPicked = other.gameObject;
+            GameObject itemPicked = collision.gameObject.gameObject;
 
             // Gets the components within the item script
             Item item = itemPicked.GetComponent<Item>();
@@ -80,6 +79,8 @@ public class Inventory : MonoBehaviour
             AddItem(itemPicked, item.ID, item.type, item.description, item.icon);
         }
     }
+
+
 
 
     void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon)
