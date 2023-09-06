@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float regenerateSprintAmount = 0.05f;
 
     //Lerp
-    [Header("Lerp")]
+    [Header("Player smoother")]
     [Tooltip("this is how smooth the player movement is (keep this value really low (0.005 to 0.05))")]
     public float lerpAmount = 0.05f;
 
