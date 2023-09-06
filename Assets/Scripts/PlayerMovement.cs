@@ -8,19 +8,30 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
 
     //Player
+    [Header("Player Movement")]
+    [Tooltip("base player movement speed")]
     public float movementSpeed = 4f;
     float horizontalInput;
     float verticalInput;
     
     //Sprint
+    [Header("Sprint")]
+    [Tooltip("player sprint speed multiplier")]
     public float sprintMultiplier = 2f;
-    float maxSprintLength = 3f;
+    [Tooltip("this is the max amount of time the player can sprint for")]
+    public float maxSprintLength = 3f;
+    [Tooltip("this is the length of the sprint")]
     public float sprintLength = 3f;
-    float maxRegenerateSprintLength = 0.5f;
+    [Tooltip("this is the max amount of time it takes for the player to regenerate their sprint")]
+    public float maxRegenerateSprintLength = 0.5f;
+    [Tooltip("this is the time it takes to regenerate the sprint")]
     public float regenerateSprintLength = 0.5f;
+    [Tooltip("this is how fast the sprint regenerates (keep this value low (0.05 - 0.10))")]
     public float regenerateSprintAmount = 0.05f;
 
     //Lerp
+    [Header("Lerp")]
+    [Tooltip("this is how smooth the player movement is (keep this value really low (0.005 to 0.05))")]
     public float lerpAmount = 0.05f;
 
 
