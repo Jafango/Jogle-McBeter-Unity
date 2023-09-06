@@ -7,14 +7,18 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
     // Variables of the slot
+    [Header("Objects detail in slot")]
     public GameObject item;
     public int ID;
     public string type;
     public string description;
     public bool empty;
     public Sprite icon;
+
+    [Header("Counter variables")]
+    [Tooltip("Text used to count number of same objects in a slot")]
     public TMP_Text numberOfObject;
-    public int objectCounter;
+    private int objectCounter;
 
     public void UpdateSlot()
     {

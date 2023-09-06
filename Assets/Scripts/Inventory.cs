@@ -6,13 +6,22 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     // Boolean classes used to check if the canvas object is enabled
+
+    [Header("Inventory")]
+    [Tooltip("Used to check if the inventory is visible or not when the game starts")]
     public bool inventoryCanvasEnabled;
+
+    [Tooltip("Inventory GameObject is placed here to be used in the script")]
     public GameObject inventory;
 
+    [Header("Inventory Slots")]
     private int allSlots;
     private int enabledSlots;
+
+    [Tooltip("The number of slots that is with in the UI & the slots input area")]
     public GameObject[] slot;
 
+    [Tooltip("The UI object that has the slots as the child in the UI")]
     public GameObject slotHolder;
 
 
