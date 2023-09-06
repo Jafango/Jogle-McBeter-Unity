@@ -14,17 +14,14 @@ public class Slot : MonoBehaviour
     public bool empty;
     public Sprite icon;
     public TMP_Text numberOfObject;
-    public int objectCounter;
 
     public void UpdateSlot()
     {
         this.GetComponent<Image>().sprite = icon;
-        objectCounter = 0;
     }
 
     public void UpdateNumberOfObject()
     {
-        objectCounter += 1;
-        numberOfObject.text = "x" + objectCounter.ToString();
+        numberOfObject.text += 1.ToString();
     }
 }
