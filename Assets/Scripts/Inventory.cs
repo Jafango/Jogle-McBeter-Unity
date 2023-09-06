@@ -12,15 +12,16 @@ public class Inventory : MonoBehaviour
     private int allSlots;
     private int enabledSlots;
     public GameObject[] slot;
+    public GameObject text;
 
     public GameObject slotHolder;
 
 
 
-    void Start()
+    public void Start()
     {
         // Variables used
-        allSlots = 158;
+        allSlots = 12;
         slot = new GameObject[allSlots];
 
 
@@ -62,8 +63,8 @@ public class Inventory : MonoBehaviour
             inventory.SetActive(false);
         }
 
-    }
 
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -79,7 +80,6 @@ public class Inventory : MonoBehaviour
             AddItem(itemPicked, item.ID, item.type, item.description, item.icon);
         }
     }
-
 
 
 
@@ -128,6 +128,19 @@ public class Inventory : MonoBehaviour
                 // Sets the slot empty to false to make sure to other item is added to the slot
                 slot[i].GetComponent<Slot>().empty = false;
 
+
+                return;
+            }
+            else if (slot[i].GetComponent<Slot>().empty == false && slot[i].GetComponent<Slot>().ID == itemID)
+            {
+                // Moves the item to the slot
+                itemObject.transform.parent = slot[i].transform;
+
+                // Disables the item object
+                itemObject.SetActive(false);
+
+                // Adds one to the text which is displayed to check the numbers of same items in the inventory
+                slot[i].GetComponent<Slot>().UpdateNumberOfObject();
 
                 return;
             }
