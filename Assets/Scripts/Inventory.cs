@@ -12,7 +12,6 @@ public class Inventory : MonoBehaviour
     private int allSlots;
     private int enabledSlots;
     public GameObject[] slot;
-    public GameObject text;
 
     public GameObject slotHolder;
 
@@ -21,7 +20,7 @@ public class Inventory : MonoBehaviour
     public void Start()
     {
         // Variables used
-        allSlots = 12;
+        allSlots = 2;
         slot = new GameObject[allSlots];
 
 
@@ -66,7 +65,7 @@ public class Inventory : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Item")
         {
