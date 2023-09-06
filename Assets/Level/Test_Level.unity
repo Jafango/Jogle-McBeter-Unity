@@ -2870,7 +2870,6 @@ MonoBehaviour:
   empty: 0
   icon: {fileID: 0}
   numberOfObject: {fileID: 0}
-  objectCounter: 0
 --- !u!1 &779170090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6462,7 +6461,6 @@ MonoBehaviour:
   empty: 0
   icon: {fileID: 0}
   numberOfObject: {fileID: 646039328}
-  objectCounter: 0
 --- !u!4 &1705396722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4184970128541443503, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}

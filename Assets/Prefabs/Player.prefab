@@ -196,7 +196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 4
   sprintMultiplier: 2
+  maxSprintLength: 3
   sprintLength: 3
+  maxRegenerateSprintLength: 0.5
   regenerateSprintLength: 0.5
   regenerateSprintAmount: 0.05
   lerpAmount: 0.05
