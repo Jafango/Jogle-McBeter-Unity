@@ -3,16 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Floor
+  - Walls
   - 
   - 
   - 
@@ -38,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Player
+    uniqueID: 4251242159
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
