@@ -85,13 +85,13 @@ public class Inventory : MonoBehaviour
             Item item = itemPicked.GetComponent<Item>();
 
             // Calls the AddItem function and adds the item variables required in the function
-            AddItem(itemPicked, item.ID, item.type, item.description, item.icon);
+            AddItem(itemPicked, item.displayName, item.description, item.icon);
         }
     }
 
 
 
-    void AddItem(GameObject itemObject, int itemID, string itemType, string itemDescription, Sprite itemIcon)
+    void AddItem(GameObject itemObject, string displayName, string itemDescription, Sprite itemIcon)
     {
 
         // Used to check if a slot is empty to add item
@@ -100,11 +100,6 @@ public class Inventory : MonoBehaviour
             // If the slot is empty then add item
             if (slot[i].GetComponent<Slot>().empty)
             {
-                // Sets the picked boolean to true
-                itemObject.GetComponent<Item>().picked = true;
-
-
-
                 // Sets the ttem of the picked object to the slot
                 slot[i].GetComponent<Slot>().item = itemObject;
 
@@ -112,10 +107,7 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().icon = itemIcon;
 
                 // Sets the type of the picked object to the slot
-                slot[i].GetComponent<Slot>().type = itemType;
-
-                // Sets the id of the picked object to the slot
-                slot[i].GetComponent<Slot>().ID = itemID;
+                slot[i].GetComponent<Slot>().displayName = displayName;
 
                 // Sets the icon of the picked object to the slot
                 slot[i].GetComponent<Slot>().description = itemDescription;
@@ -139,7 +131,7 @@ public class Inventory : MonoBehaviour
 
                 return;
             }
-            else if (slot[i].GetComponent<Slot>().empty == false && slot[i].GetComponent<Slot>().ID == itemID)
+            else if (slot[i].GetComponent<Slot>().empty == false && slot[i].GetComponent<Slot>().displayName == displayName)
             {
                 // Moves the item to the slot
                 itemObject.transform.parent = slot[i].transform;

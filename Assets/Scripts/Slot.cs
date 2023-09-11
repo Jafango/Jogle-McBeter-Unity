@@ -9,8 +9,7 @@ public class Slot : MonoBehaviour
     // Variables of the slot
     [Header("Objects detail in slot")]
     public GameObject item;
-    public int ID;
-    public string type;
+    public string displayName;
     public string description;
     public bool empty;
     public Sprite icon;
