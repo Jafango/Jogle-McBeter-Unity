@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839811247604240536}
   - component: {fileID: 6977263237182780409}
+  - component: {fileID: 3065710757473478081}
   m_Layer: 0
   m_Name: TestPickupItem
   m_TagString: Item
@@ -68,6 +69,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!114 &3065710757473478081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901283594149704626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d487ccd502384499f0c8847ec6c108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: a442bc8868351824bacaba59a52604a8, type: 2}
 --- !u!1 &4856030617135451706
 GameObject:
   m_ObjectHideFlags: 0

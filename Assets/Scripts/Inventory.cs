@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using Unity.VisualScripting.ReorderableList;
 
 public class Inventory : MonoBehaviour
 {
@@ -12,21 +13,57 @@ public class Inventory : MonoBehaviour
     public bool inventoryCanvasEnabled;
 
     [Tooltip("Inventory GameObject is placed here to be used in the script")]
-    public GameObject inventory;
+    public GameObject inventoryGameObject;
 
     [Header("Inventory Slots")]
     private int allSlots;
     private int enabledSlots;
 
     [Tooltip("The number of slots that is with in the UI & the slots input area")]
-    public GameObject[] slot;
+    public List<Slot> inventorySlots = new List<Slot>();
+    private Dictionary<Item, Slot> itemDictionary = new Dictionary<Item, Slot>();
 
     [Tooltip("The UI object that has the slots as the child in the UI")]
     public GameObject slotHolder;
 
+    private void OnEnable() {
+        pickupTest.onTestItemCollected += Add;
+    }
 
+    private void OnDisable() {
+        pickupTest.onTestItemCollected -= Add;
+    }
 
-    public void Start()
+    public void Add(Item itemData)
+    {
+        if(itemDictionary.TryGetValue(itemData, out Slot item))
+        {
+            item.AddToStack();
+            Debug.Log($"{item.itemData.displayName} total stack is now {item.objectCounter}");
+        }
+        else
+        {
+            Slot newItem = new Slot(itemData);
+            inventorySlots.Add(newItem);
+            itemDictionary.Add(itemData, newItem);
+            Debug.Log($"{itemData.displayName} first time ");
+        }
+    }
+
+        public void Remove(Item itemData)
+    {
+        if(itemDictionary.TryGetValue(itemData, out Slot item))
+        {
+            item.RemoveFromStack();
+            if(item.objectCounter == 0)
+            {
+                inventorySlots.Remove(item);
+                itemDictionary.Remove(itemData);
+            }
+        }
+    }
+
+    /*public void Start()
     {
         // Variables used
         allSlots = 2;
@@ -46,7 +83,7 @@ public class Inventory : MonoBehaviour
                 slot[i].GetComponent<Slot>().empty = true;
             }
         }
-    }
+    } */
 
 
 
@@ -62,36 +99,36 @@ public class Inventory : MonoBehaviour
         // If the inventoryCanvasEnabled boolean is true then enables the inventory
         if (inventoryCanvasEnabled == true)
         {
-            inventory.SetActive(true);
+            inventoryGameObject.SetActive(true);
         }
 
         // If the boolean is false disables the inventory
         else
         {
-            inventory.SetActive(false);
+            inventoryGameObject.SetActive(false);
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Item")
+        ICollectable collectable = collision.GetComponent<ICollectable>();
+        if(collectable != null)
         {
+            collectable.Collect();
             // Defines the item picked up for a bit to be placed in the inventory
             GameObject itemPicked = collision.gameObject.gameObject;
 
             // Gets the components within the item script
-            Item item = itemPicked.GetComponent<Item>();
+            //Item item = itemPicked.GetComponent<Item>();
 
             // Calls the AddItem function and adds the item variables required in the function
-            AddItem(itemPicked, item.displayName, item.description, item.icon);
+            //AddItem(item);
         }
     }
 
+ 
 
-
-    void AddItem(GameObject itemObject, string displayName, string itemDescription, Sprite itemIcon)
+/*    void AddItem(Item item)
     {
 
         // Used to check if a slot is empty to add item
@@ -145,5 +182,5 @@ public class Inventory : MonoBehaviour
                 return;
             }
         }
-    }
-}
+    } */
+} 
