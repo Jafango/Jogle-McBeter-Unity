@@ -14,8 +14,7 @@ public class Slot
     public Item itemData;
 
     [Header("Counter variables")]
-    [Tooltip("Text used to count number of same objects in a slot")]
-    public TMP_Text numberOfObject;
+    [Tooltip("total number of items")]
     public int objectCounter;
 
     public Slot(Item item)

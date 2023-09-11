@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using Unity.VisualScripting.ReorderableList;
+using System;
 
 public class Inventory : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Inventory : MonoBehaviour
     private int enabledSlots;
 
     [Tooltip("The number of slots that is with in the UI & the slots input area")]
+
+    public static event Action<List<Slot>> OnInventoryChange;
     public List<Slot> inventorySlots = new List<Slot>();
     private Dictionary<Item, Slot> itemDictionary = new Dictionary<Item, Slot>();
 
@@ -40,6 +43,7 @@ public class Inventory : MonoBehaviour
         {
             item.AddToStack();
             Debug.Log($"{item.itemData.displayName} total stack is now {item.objectCounter}");
+            OnInventoryChange?.Invoke(inventorySlots);
         }
         else
         {
@@ -47,10 +51,11 @@ public class Inventory : MonoBehaviour
             inventorySlots.Add(newItem);
             itemDictionary.Add(itemData, newItem);
             Debug.Log($"{itemData.displayName} first time ");
+            OnInventoryChange?.Invoke(inventorySlots);
         }
     }
 
-        public void Remove(Item itemData)
+    public void Remove(Item itemData)
     {
         if(itemDictionary.TryGetValue(itemData, out Slot item))
         {
@@ -60,6 +65,7 @@ public class Inventory : MonoBehaviour
                 inventorySlots.Remove(item);
                 itemDictionary.Remove(itemData);
             }
+            OnInventoryChange?.Invoke(inventorySlots);
         }
     }
 
