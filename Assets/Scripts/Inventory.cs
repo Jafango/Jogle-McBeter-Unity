@@ -25,10 +25,12 @@ public class Inventory : MonoBehaviour
 
     private void OnEnable() {
         pickupTest.onTestItemCollected += Add;
+        pickupTest2.onTest2ItemCollected += Add;
     }
 
     private void OnDisable() {
         pickupTest.onTestItemCollected -= Add;
+        pickupTest2.onTest2ItemCollected -= Add;
     }
     public void Add(Item itemData)
     {
