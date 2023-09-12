@@ -18,6 +18,13 @@ public class InventorySlot : MonoBehaviour
         stackSizeText.enabled = false;
     }
 
+    public void EnableSlot()
+    {
+        icon.enabled = true;
+        labelText.enabled = true;
+        stackSizeText.enabled = true;
+    }
+
     public void DrawSlot(Slot slot)
     {
         if(slot == null)
