@@ -5,6 +5,7 @@ using UnityEngine;
 using Unity.VisualScripting.ReorderableList;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -26,8 +27,23 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("we start");
         OnInventoryChange?.Invoke(inventorySlots);
+        SceneManager.activeSceneChanged += OnSceneLoaded;
     }
+
+    private void OnSceneLoaded(Scene current, Scene next)
+    {
+        string currentName = current.name;
+
+        if(currentName == null)
+        {
+            Debug.Log("Current scene has been changed");
+            OnInventoryChange?.Invoke(inventorySlots);
+        }
+        Debug.Log("Scenes: " + currentName + ", " + next.name);
+    }
+
 
     public void Add(Item itemData)
     {

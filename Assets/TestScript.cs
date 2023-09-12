@@ -11,7 +11,7 @@ public class TestScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             DontDestroyOnLoad(this.gameObject);
-            SceneManager.LoadScene("CraftingScene", LoadSceneMode.Additive);
+            SceneManager.LoadScene("CraftingScene", LoadSceneMode.Single);
         }
     }
 }
