@@ -15,19 +15,13 @@ public class Inventory : MonoBehaviour
 
     [Tooltip("Inventory GameObject is placed here to be used in the script")]
     public GameObject inventoryGameObject;
-
-    [Header("Inventory Slots")]
-    private int allSlots;
-    private int enabledSlots;
+    public GameObject CraftingGameObject;
 
     [Tooltip("The number of slots that is with in the UI & the slots input area")]
 
     public static event Action<List<Slot>> OnInventoryChange;
     public List<Slot> inventorySlots = new List<Slot>();
     private Dictionary<Item, Slot> itemDictionary = new Dictionary<Item, Slot>();
-
-    [Tooltip("The UI object that has the slots as the child in the UI")]
-    public GameObject slotHolder;
 
     private void OnEnable() {
         pickupTest.onTestItemCollected += Add;
@@ -36,7 +30,6 @@ public class Inventory : MonoBehaviour
     private void OnDisable() {
         pickupTest.onTestItemCollected -= Add;
     }
-
     public void Add(Item itemData)
     {
         if(itemDictionary.TryGetValue(itemData, out Slot item))
@@ -105,13 +98,28 @@ public class Inventory : MonoBehaviour
         // If the inventoryCanvasEnabled boolean is true then enables the inventory
         if (inventoryCanvasEnabled == true)
         {
-            inventoryGameObject.SetActive(true);
+            //inventoryGameObject.GetComponentInChildren<CanvasRenderer>().cull = true;
+            //inventoryGameObject.SetActive(true);
+            /*foreach(GameObject go in GameObject.FindGameObjectsWithTag("Crafting"))
+            {
+                CanvasRenderer renderer = go.GetComponent<CanvasRenderer>();
+                renderer.cull = true;
+            }*/
+            //CraftingGameObject.GetComponent<CanvasRenderer>().cull = false;
+
         }
 
         // If the boolean is false disables the inventory
         else
         {
-            inventoryGameObject.SetActive(false);
+            //inventoryGameObject.GetComponentInChildren<CanvasRenderer>().cull = false;
+            //inventoryGameObject.SetActive(false);
+            /*foreach(GameObject go in GameObject.FindGameObjectsWithTag("Crafting"))
+            {
+                CanvasRenderer renderer = go.GetComponent<CanvasRenderer>();
+                renderer.cull = false;
+            }*/
+            //CraftingGameObject.GetComponent<CanvasRenderer>().cull = false;
         }
     }
 
@@ -131,62 +139,4 @@ public class Inventory : MonoBehaviour
             //AddItem(item);
         }
     }
-
- 
-
-/*    void AddItem(Item item)
-    {
-
-        // Used to check if a slot is empty to add item
-        for (int i = 0; i < allSlots; i++)
-        {
-            // If the slot is empty then add item
-            if (slot[i].GetComponent<Slot>().empty)
-            {
-                // Sets the ttem of the picked object to the slot
-                slot[i].GetComponent<Slot>().item = itemObject;
-
-                // Sets the icon of the picked object to the slot
-                slot[i].GetComponent<Slot>().icon = itemIcon;
-
-                // Sets the type of the picked object to the slot
-                slot[i].GetComponent<Slot>().displayName = displayName;
-
-                // Sets the icon of the picked object to the slot
-                slot[i].GetComponent<Slot>().description = itemDescription;
-
-
-
-                // Moves the item to the slot
-                itemObject.transform.parent = slot[i].transform;
-
-                // Disables the item object
-                itemObject.SetActive(false);
-
-
-                // Calls the function UpdateSlot
-                slot[i].GetComponent<Slot>().UpdateSlot();
-
-
-                // Sets the slot empty to false to make sure to other item is added to the slot
-                slot[i].GetComponent<Slot>().empty = false;
-
-
-                return;
-            }
-            else if (slot[i].GetComponent<Slot>().empty == false && slot[i].GetComponent<Slot>().displayName == displayName)
-            {
-                // Moves the item to the slot
-                itemObject.transform.parent = slot[i].transform;
-
-                // Disables the item object
-                itemObject.SetActive(false);
-
-                // Adds one to the text which is displayed to check the numbers of same items in the inventory
-                slot[i].GetComponent<Slot>().UpdateNumberOfObject();
-
-                return;
-            }
-        }
-    } */
 } 

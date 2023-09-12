@@ -10,7 +10,7 @@ public class InventorySlot : MonoBehaviour
     public Image icon;
     public TextMeshProUGUI labelText;
     public TextMeshProUGUI stackSizeText;
-    
+
     public void ClearSlot()
     {
         icon.enabled = false;

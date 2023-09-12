@@ -26,17 +26,9 @@ public class Slot
     public void AddToStack()
     {
         objectCounter++;
-        /*if(objectCounter >= 2)
-        {
-            numberOfObject.text = "x" + objectCounter.ToString();
-        }*/
     }
     public void RemoveFromStack()
     {
         objectCounter--;
-        /*if(objectCounter >= 2)  
-        {
-            numberOfObject.text = "x" + objectCounter.ToString();
-        }*/
     }
 }
