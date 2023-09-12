@@ -9,4 +9,6 @@ public class Item : ScriptableObject {
     public string displayName;
     public string description;
     public Sprite icon;
+
+    public int amount;
 }

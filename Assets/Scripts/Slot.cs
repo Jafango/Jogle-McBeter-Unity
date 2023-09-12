@@ -20,23 +20,15 @@ public class Slot
     public Slot(Item item)
     {
         itemData = item;
-        AddToStack();
+        AddToStack(item.amount);
     }
 
-    public void AddToStack()
+    public void AddToStack(int amount)
     {
-        objectCounter++;
-        /*if(objectCounter >= 2)
-        {
-            numberOfObject.text = "x" + objectCounter.ToString();
-        }*/
+        objectCounter = objectCounter + amount;
     }
     public void RemoveFromStack()
     {
         objectCounter--;
-        /*if(objectCounter >= 2)  
-        {
-            numberOfObject.text = "x" + objectCounter.ToString();
-        }*/
     }
 }

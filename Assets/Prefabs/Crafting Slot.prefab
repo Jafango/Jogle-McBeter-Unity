@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -39.100006}
-  m_SizeDelta: {x: 100, y: 21.8}
+  m_AnchoredPosition: {x: 0, y: -37.4}
+  m_SizeDelta: {x: 100, y: 22.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2851576893437073328
 CanvasRenderer:
@@ -319,8 +319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000012398}
-  m_SizeDelta: {x: 100, y: 21.8}
+  m_AnchoredPosition: {x: 0, y: -0.0000047684}
+  m_SizeDelta: {x: 50, y: 11.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2306212477416593104
 CanvasRenderer:
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 1191879468060500718}
   - component: {fileID: 5618634307627301418}
   m_Layer: 5
-  m_Name: Slot
+  m_Name: Crafting Slot
   m_TagString: Crafting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,7 +522,7 @@ RectTransform:
   m_GameObject: {fileID: 9002427425804032590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3449287866849058130}
