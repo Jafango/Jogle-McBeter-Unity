@@ -8,15 +8,6 @@ using Unity.VisualScripting;
 
 public class Inventory : MonoBehaviour
 {
-    // Boolean classes used to check if the canvas object is enabled
-
-    [Header("Inventory")]
-    [Tooltip("Used to check if the inventory is visible or not when the game starts")]
-    public bool inventoryCanvasEnabled;
-
-    [Tooltip("Inventory GameObject is placed here to be used in the script")]
-    public GameObject inventoryGameObject;
-
     [Tooltip("The number of slots that is with in the UI & the slots input area")]
 
     public static event Action<List<Slot>> OnInventoryChange;
@@ -32,11 +23,17 @@ public class Inventory : MonoBehaviour
         pickupTest.onTestItemCollected -= Add;
         pickupTest2.onTest2ItemCollected -= Add;
     }
+
+    private void Start()
+    {
+        OnInventoryChange?.Invoke(inventorySlots);
+    }
+
     public void Add(Item itemData)
     {
         if(itemDictionary.TryGetValue(itemData, out Slot item))
         {
-            item.AddToStack();
+            item.AddToStack(item.itemData.amount);
             Debug.Log($"{item.itemData.displayName} total stack is now {item.objectCounter}");
             OnInventoryChange?.Invoke(inventorySlots);
         }

@@ -20,12 +20,12 @@ public class Slot
     public Slot(Item item)
     {
         itemData = item;
-        AddToStack();
+        AddToStack(item.amount);
     }
 
-    public void AddToStack()
+    public void AddToStack(int amount)
     {
-        objectCounter++;
+        objectCounter = objectCounter + amount;
     }
     public void RemoveFromStack()
     {
