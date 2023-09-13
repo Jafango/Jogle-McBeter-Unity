@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject interactObject;
+    private Vector2 boxSize = new Vector2(0.1f, 1f);
     //Components
     Rigidbody2D rb;
 
@@ -41,11 +43,15 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        interactObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E))
+            CheckInteraction();
+
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
     }
@@ -77,5 +83,28 @@ public class PlayerMovement : MonoBehaviour
                 regenerateSprintLength -= Time.deltaTime;
             }
         }
+    }
+    public void OpenInteractableIcon()
+    {
+        interactObject.SetActive(true);
+    }
+
+    public void CloseInteractableIcon()
+    {
+        interactObject.SetActive(false);
+    }
+
+    private void CheckInteraction()
+    {
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize,0, Vector2.zero);
+        if(hits.Length > 0)
+            foreach(RaycastHit2D rc in hits)
+            {
+                if (rc.transform.GetComponent<Interactable>())
+                {
+                    rc.transform.GetComponent<Interactable>().Interact();
+                    return;
+                }
+            }
     }
 }
