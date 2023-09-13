@@ -2,33 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour
+[Serializable]
+
+public class Slot
 {
     // Variables of the slot
-    [Header("Objects detail in slot")]
-    public GameObject item;
-    public int ID;
-    public string type;
-    public string description;
-    public bool empty;
-    public Sprite icon;
+    [Header("Item data passed in from Item class")]
+    public Item itemData;
 
     [Header("Counter variables")]
-    [Tooltip("Text used to count number of same objects in a slot")]
-    public TMP_Text numberOfObject;
-    private int objectCounter;
+    [Tooltip("total number of items")]
+    public int objectCounter;
 
-    public void UpdateSlot()
+    public Slot(Item item)
     {
-        this.GetComponent<Image>().sprite = icon;
-        objectCounter = 1;
+        itemData = item;
+        AddToStack(item.amount);
     }
 
-    public void UpdateNumberOfObject()
+    public void AddToStack(int amount)
     {
-        objectCounter += 1;
-        numberOfObject.text = "x" + objectCounter.ToString();
+        objectCounter = objectCounter + amount;
+    }
+    public void RemoveFromStack()
+    {
+        objectCounter--;
     }
 }
