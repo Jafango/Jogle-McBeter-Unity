@@ -17,6 +17,14 @@ public class SlotCopy : MonoBehaviour
         slotImage.sprite = image;
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "CraftingSystem")
+        {
+            Debug.Log("in the triggerr");
+        }
+    }
+
     public void Delete()
     {
         Destroy(gameObject);
