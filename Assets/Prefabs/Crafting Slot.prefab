@@ -593,6 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e653d1cf0493144469be1a234ab9bd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventorySlot: {fileID: 5618634307627301418}
+  slotCopy: {fileID: 6028656889938217613, guid: 820cd76e8eb03354d9e1ed40c2efbb8d, type: 3}
+  parent: {fileID: 0}
 --- !u!61 &2778994613945744094
 BoxCollider2D:
   m_ObjectHideFlags: 0

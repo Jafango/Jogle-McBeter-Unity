@@ -32,16 +32,19 @@ public class Inventory : MonoBehaviour
         SceneManager.activeSceneChanged += OnSceneLoaded;
     }
 
+    public void reloadScene()
+    {
+        OnInventoryChange?.Invoke(inventorySlots);
+    }
+
     private void OnSceneLoaded(Scene current, Scene next)
     {
         string currentName = current.name;
 
         if(currentName == null)
         {
-            Debug.Log("Current scene has been changed");
             OnInventoryChange?.Invoke(inventorySlots);
         }
-        Debug.Log("Scenes: " + currentName + ", " + next.name);
     }
 
 
