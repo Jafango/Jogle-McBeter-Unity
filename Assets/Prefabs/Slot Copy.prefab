@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7414297476353068803}
   m_Layer: 5
   m_Name: Slot Copy
-  m_TagString: Untagged
+  m_TagString: CraftingSlotCopy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

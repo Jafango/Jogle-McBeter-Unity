@@ -21,13 +21,11 @@ public class CraftingSlotDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Dragging");
-
+        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("Ended Drag");
         dragInfo.Delete();
     }
 }

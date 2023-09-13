@@ -17,8 +17,9 @@ public class SlotCopy : MonoBehaviour
         slotImage.sprite = image;
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnCollsiionEnter2D(Collider2D other)
     {
+        Debug.Log("Slot copy collide");
         if(other.tag == "CraftingSystem")
         {
             Debug.Log("in the triggerr");

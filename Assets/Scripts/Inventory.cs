@@ -27,7 +27,6 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("we start");
         OnInventoryChange?.Invoke(inventorySlots);
         SceneManager.activeSceneChanged += OnSceneLoaded;
     }
@@ -53,7 +52,7 @@ public class Inventory : MonoBehaviour
         if(itemDictionary.TryGetValue(itemData, out Slot item))
         {
             item.AddToStack(item.itemData.amount);
-            Debug.Log($"{item.itemData.displayName} total stack is now {item.objectCounter}");
+            //Debug.Log($"{item.itemData.displayName} total stack is now {item.objectCounter}");
             OnInventoryChange?.Invoke(inventorySlots);
         }
         else
@@ -61,7 +60,7 @@ public class Inventory : MonoBehaviour
             Slot newItem = new Slot(itemData);
             inventorySlots.Add(newItem);
             itemDictionary.Add(itemData, newItem);
-            Debug.Log($"{itemData.displayName} first time ");
+            //Debug.Log($"{itemData.displayName} first time ");
             OnInventoryChange?.Invoke(inventorySlots);
         }
     }
