@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SlotCopy : MonoBehaviour
 {
     public Image slotImage;
-
+    public CanvasGroup canvasGroup; 
     private void Update()
     {
         transform.position = Input.mousePosition;
@@ -23,6 +23,20 @@ public class SlotCopy : MonoBehaviour
         if(other.tag == "CraftingSystem")
         {
             Debug.Log("in the triggerr");
+        }
+    }
+
+    public void BlockRayCasts(bool block)
+    {
+        if(block == true)
+        {
+            canvasGroup.alpha = .6f;
+            canvasGroup.blocksRaycasts = false;
+        }
+        else
+        {
+            canvasGroup.blocksRaycasts = true;
+            canvasGroup.alpha = 1f;
         }
     }
 

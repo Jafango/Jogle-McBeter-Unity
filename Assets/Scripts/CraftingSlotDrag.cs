@@ -8,6 +8,12 @@ public class CraftingSlotDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     public InventorySlot inventorySlot;
     public GameObject slotCopy;
     private SlotCopy dragInfo;
+    private CanvasGroup canvasGroup;
+
+    private void Start() 
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         //When beginning to drag the item, code will make a copy (instantiate) of the item image, which the player will drag around
@@ -17,6 +23,9 @@ public class CraftingSlotDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         dragInfo.SetSlotInfo(inventorySlot.icon.sprite);
         inventorySlot.itemInfo.RemoveFromStack();
         inventorySlot.UpdateCounter();
+        canvasGroup.alpha = .6f;
+        canvasGroup.blocksRaycasts = false;
+        dragInfo.BlockRayCasts(true);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -26,6 +35,9 @@ public class CraftingSlotDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f;
+        dragInfo.BlockRayCasts(false);
         dragInfo.Delete();
     }
 }
