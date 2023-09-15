@@ -6,24 +6,18 @@ using UnityEngine.UI;
 public class SlotCopy : MonoBehaviour
 {
     public Image slotImage;
+    public Slot slot;
     public CanvasGroup canvasGroup; 
+
     private void Update()
     {
         transform.position = Input.mousePosition;
     }
 
-    public void SetSlotInfo(Sprite image)
+    public void SetSlotInfo(Sprite image, Slot inheretedInventorySlot)
     {
         slotImage.sprite = image;
-    }
-
-    public void OnCollsiionEnter2D(Collider2D other)
-    {
-        Debug.Log("Slot copy collide");
-        if(other.tag == "CraftingSystem")
-        {
-            Debug.Log("in the triggerr");
-        }
+        slot = inheretedInventorySlot;
     }
 
     public void BlockRayCasts(bool block)

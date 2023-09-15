@@ -7960,6 +7960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickupTest2
       objectReference: {fileID: 0}
+    - target: {fileID: 8663449702091070719, guid: df79e8ac9d5cf3745a9ef93f167c86c3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

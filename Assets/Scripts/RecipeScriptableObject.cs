@@ -9,4 +9,5 @@ public class RecipeScriptableObject : ScriptableObject
     public Item secondItem;
     public Item thirdItem;
 
+    public Item fourthItem;
 }

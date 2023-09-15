@@ -598,7 +598,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventorySlot: {fileID: 5618634307627301418}
+  player: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
+  inventory: {fileID: 6568420332036442392, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
   slotCopy: {fileID: 6028656889938217613, guid: 820cd76e8eb03354d9e1ed40c2efbb8d, type: 3}
+  craftingSystem: {fileID: 1639057962453342642, guid: d090702896521f14f9902daa64be01ba, type: 3}
 --- !u!61 &2778994613945744094
 BoxCollider2D:
   m_ObjectHideFlags: 0

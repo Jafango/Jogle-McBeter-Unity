@@ -65,6 +65,18 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public Slot ReturnItem(Item itemData)
+    {
+        if(itemDictionary.TryGetValue(itemData, out Slot item))
+        {
+            return item;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public void Remove(Item itemData)
     {
         if(itemDictionary.TryGetValue(itemData, out Slot item))
