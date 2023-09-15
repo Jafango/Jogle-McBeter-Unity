@@ -463,6 +463,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5716671877506168475}
     m_Modifications:
+    - target: {fileID: 364284447744514129, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Name
+      value: Item (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 364284447744514129, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_TagString
+      value: CraftingImageSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726443598636374340, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Name
+      value: Item {1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726443598636374340, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_TagString
+      value: CraftingImageSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831381936069346923, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Name
+      value: Item (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831381936069346923, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_TagString
+      value: CraftingImageSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245594511330263012, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1325843688, guid: 4e1d63044fcda7044a1f19237176b18f, type: 3}
+    - target: {fileID: 2245594511330263012, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629096027817466153, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1325843688, guid: 4e1d63044fcda7044a1f19237176b18f, type: 3}
+    - target: {fileID: 2629096027817466153, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2888429928023202293, guid: d090702896521f14f9902daa64be01ba, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -543,11 +583,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3029527905361657590, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Name
+      value: Item (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029527905361657590, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_TagString
+      value: CraftingImageSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806261638937705469, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1325843688, guid: 4e1d63044fcda7044a1f19237176b18f, type: 3}
+    - target: {fileID: 6806261638937705469, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228406692123698647, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1325843688, guid: 4e1d63044fcda7044a1f19237176b18f, type: 3}
+    - target: {fileID: 8228406692123698647, guid: d090702896521f14f9902daa64be01ba, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8906174550644736530, guid: d090702896521f14f9902daa64be01ba, type: 3}
       propertyPath: m_Name
       value: Crafting System
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4116876221681018315, guid: d090702896521f14f9902daa64be01ba, type: 3}
+    - {fileID: 126923545436250360, guid: d090702896521f14f9902daa64be01ba, type: 3}
+    - {fileID: 2732415461807385034, guid: d090702896521f14f9902daa64be01ba, type: 3}
+    - {fileID: 3248897856003834043, guid: d090702896521f14f9902daa64be01ba, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

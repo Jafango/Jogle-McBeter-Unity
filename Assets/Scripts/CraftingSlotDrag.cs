@@ -69,11 +69,13 @@ public class CraftingSlotDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         dragInfo.BlockRayCasts(false);
         if(craftingSystem.checkItemIn())
         {
-            string itemName = new string("");
-            itemName = inventorySlot.itemInfo.itemData.displayName;
-            Debug.Log("the item name " + itemName);
-            craftingSystem.AddItem(itemName);
-            craftingSystem.setItemIn(false);
+            //string itemName = new string("");
+            InventorySlot tempInventorySlot = GetComponent<InventorySlot>();
+            //itemName = inventorySlot.itemInfo.itemData.displayName;
+            tempInventorySlot = inventorySlot;
+            //Debug.Log("the item name " + itemName);
+            //craftingSystem.AddItem(itemName);
+            craftingSystem.AddItem(tempInventorySlot);
         }
         dragInfo.Delete();
     }

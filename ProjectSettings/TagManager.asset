@@ -9,6 +9,7 @@ TagManager:
   - CraftingSlot
   - CraftingSystem
   - CraftingSlotCopy
+  - CraftingImageSlot
   layers:
   - Default
   - TransparentFX
