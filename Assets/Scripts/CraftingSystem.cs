@@ -13,11 +13,11 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
 {
     public List<RecipeScriptableObject> recipeScriptable;
     //[SerializeField] public List<string> craftingSlots = new List<string>();
-    [SerializeField] public List<InventorySlot> craftingSlots = new List<InventorySlot>();
+    [SerializeField] public static List<InventorySlot> craftingSlots = new List<InventorySlot>();
     [SerializeField] public List<GameObject> slotImages = new List<GameObject>(4);
-    public int amount = 0;
-    public int maxCount = 4;
+    public static int amount = 0;
     private static bool itemIn;
+    private static bool runItemReplace;
     //public string tempValue;
     public InventorySlot tempValue;
     public void OnDrop(PointerEventData eventData)
@@ -33,22 +33,33 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     private void Start()
     {
         amount = 0;
-        GameObject[] gameObject = GameObject.FindGameObjectsWithTag("CraftingImageSlot");
-        for(int i = 0; i < gameObject.Length; i++)
+        runItemReplace = false;
+        for(int i = 0; i < slotImages.Count; i++)
         {
-            slotImages[i] = gameObject[i];//.GetComponent<Image>();
-            slotImages[i].GetComponent<CraftingSlot>().Clearslot();
+            slotImages[i].GetComponent<CraftingSlot>().ClearSlot();
         }
     }
 
     private void Update()
     {
-        if(itemIn == true)
+        //Debug.Log("Crafting Slots count " + craftingSlots.Count);
+    }
+
+    private void LateUpdate()
+    {
+        if(runItemReplace == true)
         {
-            Debug.Log("in item in");
-            changeSlotImage(tempValue.itemInfo.itemData.icon);
+            Debug.Log("amount " + amount);
+            slotImages[amount].GetComponent<CraftingSlot>().EnableSlot();
+            Debug.Log("crafting slot count " + craftingSlots.Count);
+            Debug.Log("inputted sprite " + craftingSlots[amount].icon.sprite);
+            Debug.Log("current slot sprite " + slotImages[amount].GetComponent<CraftingSlot>().icon.sprite);
+            slotImages[amount].GetComponent<CraftingSlot>().DrawSlot(craftingSlots[amount].icon.sprite);
+            amount = amount + 1;
+            runItemReplace = false;
         }
     }
+    
     public bool checkItemIn()
     {
         return itemIn;
@@ -64,17 +75,12 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
             //tempValue = name;
             tempValue = inventorySlot;
             craftingSlots.Add(tempValue);
-            Debug.Log("inventory slot " + tempValue.itemInfo.itemData.displayName);
-            Debug.Log("inventory slot 2 " + tempValue.itemInfo.itemData.icon.ToString());
-            changeSlotImage(tempValue.itemInfo.itemData.icon);
+            runItemReplace = true;
+            //OnInventoryChange?.Invoke(craftingSlots);
+            //slotImages[amount].GetComponent<CraftingSlot>().DrawSlot(tempValue.icon.sprite);
+            //changeSlotImage(tempValue.icon.sprite);
 
-            Debug.Log(slotImages[amount].ToString());
-            Debug.Log("in this crafting slot " + craftingSlots[amount].labelText.text);
-            foreach(InventorySlot item in craftingSlots)
-            {
-                Debug.Log("current items in " + item.labelText.text);
-            }
-            amount++;
+            //Debug.Log("in this crafting slot " + craftingSlots[amount].labelText.text);
         }
         else
         {
@@ -86,12 +92,12 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
 
     private void changeSlotImage(Sprite iconSprite)
     {
-        Debug.Log("we here");
+        //Debug.Log("we here");
         slotImages[amount].GetComponent<CraftingSlot>().DrawSlot(iconSprite);
-        Debug.Log(slotImages[amount].ToString());
+        //Debug.Log("inputted slot image " + slotImages[amount].GetComponent<CraftingSlot>().icon.sprite);
         if(slotImages[amount].GetComponent<Image>() == true)
         {
-            Debug.Log("slot images is enabled");
+            //Debug.Log("slot images is enabled");
         }
     }
 

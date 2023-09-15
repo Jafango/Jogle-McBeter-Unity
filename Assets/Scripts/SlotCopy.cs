@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class SlotCopy : MonoBehaviour
 {
     public Image slotImage;
-    public Slot slot;
     public CanvasGroup canvasGroup; 
 
     private void Update()
@@ -17,7 +16,6 @@ public class SlotCopy : MonoBehaviour
     public void SetSlotInfo(Sprite image, Slot inheretedInventorySlot)
     {
         slotImage.sprite = image;
-        slot = inheretedInventorySlot;
     }
 
     public void BlockRayCasts(bool block)

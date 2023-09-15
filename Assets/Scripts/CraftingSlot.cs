@@ -6,20 +6,38 @@ using UnityEngine.UI;
 public class CraftingSlot : MonoBehaviour
 {
     public Image icon;
-    public void Clearslot()
+    public Sprite test;
+
+    private void Start()
     {
-        icon.enabled = false;
+        //icon = transform.GetChild(0).gameObject.GetComponent<Image>();
+        //icon = transform.GetChild(0).gameObject;
+    }
+    public void ClearSlot()
+    {
+        icon.GetComponent<Image>().enabled = false;
+        //icon.enabled = false;
     }
 
     public void EnableSlot()
     {
-        icon.enabled = true;
+        this.icon.enabled = true;
+        //icon.enabled = true;
     }
 
-    public void DrawSlot(Sprite sprite)
+    public void DrawSlot(Sprite tempSprite)
     {
-        Debug.Log("the sprite is " + sprite);
-        icon.enabled = true;
-        icon.sprite = sprite;
+        //icon.GetComponent<Image>().enabled = true;
+        //icon.GetComponent<Image>().sprite = test;
+        this.icon.sprite = tempSprite;
+        //icon.GetComponent<Image>().enabled = true;
+        //icon.SetActive(true);
+        //icon.gameObject.SetActive(true);
+        //gameObject.SetActive(true);
+
+        //Debug.Log("is enabled " + icon.GetComponent<Image>().isActiveAndEnabled);
+        //icon.sprite = sprite;
+        //icon.GetComponent<Image>().sprite = tempSprite;
+        //Debug.Log("The correct sprite should be " + icon.GetComponent<Image>().sprite);
     }
 }
