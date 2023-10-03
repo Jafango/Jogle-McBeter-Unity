@@ -155,7 +155,6 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                 {
                     //TODO: add tooltip thats says no recipe
                     RemoveCurrentItems();
-                    break;
                 }
             }
         }

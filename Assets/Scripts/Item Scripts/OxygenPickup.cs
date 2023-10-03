@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class OxygenPickup : MonoBehaviour, ICollectable
 {
-    public static event HandleTestItemCollected onTestItemCollected;
-    public delegate void HandleTestItemCollected(Item item); //does the add item
+    public static event HandleOxygenCollected onOxygenCollected;
+    public delegate void HandleOxygenCollected(Item item); //does the add item
     public Item itemData;
 
 
     public void Collect()
     {
         Destroy(gameObject);
-        onTestItemCollected?.Invoke(itemData);
+        onOxygenCollected?.Invoke(itemData);
     }
 
     public void OnMouseEnter()
