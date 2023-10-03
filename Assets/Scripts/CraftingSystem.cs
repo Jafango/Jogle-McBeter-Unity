@@ -18,6 +18,9 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     //crafting slots is used for the crafting system to store the item information that are in the slots
     [SerializeField] public static List<InventorySlot> craftingSlots = new List<InventorySlot>();
 
+    //gets the player inventory
+    public Inventory playerInventory;
+
     [SerializeField] public List<RecipeScriptableObject> recipes;
 
     //slot images is used to display the item that is put into the slots
@@ -39,6 +42,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     }
     private void Start()
     {
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         amount = 0;
         runItemReplace = false;
         for(int i = 0; i < slotImages.Count; i++)
@@ -123,6 +127,13 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                 //and checks to see if the correct number 
                 if(canBeCrafted == recipes[y].requireditems.Count(s => s != null) && craftingSlots.Count() == recipes[y].requireditems.Count(s => s != null))
                 {
+                    //used to remove one of the items
+                    for(int x = 0; x < craftingSlots.Count(); x++)
+                    {
+                        //craftingSlots[x].itemInfo.RemoveFromStack();
+                        playerInventory.Remove(craftingSlots[x].itemInfo.itemData);
+                        //craftingSlots[x].UpdateCounter();
+                    }
                     Debug.Log("IT WORKSSSS");
                 }
                 else
