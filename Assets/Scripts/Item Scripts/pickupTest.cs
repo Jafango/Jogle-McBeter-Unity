@@ -15,4 +15,15 @@ public class pickupTest : MonoBehaviour, ICollectable
         Destroy(gameObject);
         onTestItemCollected?.Invoke(itemData);
     }
+
+
+    public void OnMouseEnter()
+    {
+        ToolTipManager._instance.SetAndShowToolTips(itemData.displayName, itemData.description);
+    }
+
+    private void OnMouseExit()
+    {
+        ToolTipManager._instance.HideToolTips();
+    }
 }

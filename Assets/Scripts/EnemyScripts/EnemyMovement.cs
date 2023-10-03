@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
         {
             speed = 4;
         }
-        else if (gapRange <= 5)
+        else if (gapRange < 5)
         {
             EnemyMove();
             speed = 5.5f;
@@ -31,10 +31,11 @@ public class EnemyMovement : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 
-        //float AngleTarget = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x);
-        //float AngleRotate = (180 / Mathf.PI) * AngleTarget;
 
-        //this.transform.rotation = Quaternion.Euler(0, 0, AngleRotate);
+        float AngleTarget = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x);
+        float AngleRotate = (180 / Mathf.PI) * AngleTarget;
+
+        this.transform.rotation = Quaternion.Euler(0, 0, AngleRotate);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
