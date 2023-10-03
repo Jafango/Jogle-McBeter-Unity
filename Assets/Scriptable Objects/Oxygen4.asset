@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60d744e1d8c9045bfbfe682f7b5e0df4, type: 3}
-  m_Name: Oxygen
+  m_Name: Oxygen4
   m_EditorClassIdentifier: 
-  displayName: Oxygen
-  description: Oxygen is Earth's most abundant element
-  icon: {fileID: 20111966, guid: d69e31272ed70104aaed9d73966e74f0, type: 3}
+  displayName: Oxygen4
+  description: Four atoms of Oxygen
+  icon: {fileID: 0}
   amount: 1
