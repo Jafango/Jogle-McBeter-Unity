@@ -135,10 +135,13 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                         //craftingSlots[x].UpdateCounter();
                     }
                     Debug.Log("IT WORKSSSS");
+                    playerInventory.Add(recipes[y].resultCraftedItem);
+                    RemoveCurrentItems();
                 }
                 else
                 {
-                    Debug.Log("IT DONT WORKRR");
+                    //TODO: add tooltip thats says no recipe
+                    RemoveCurrentItems();
                 }
             }
         }
