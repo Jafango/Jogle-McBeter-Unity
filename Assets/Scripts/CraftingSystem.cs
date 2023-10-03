@@ -117,7 +117,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                     //these ifs are here to check if the crafting slot and recipe slot are null to prevent null errors
                     if(craftingSlots[x] != null)
                     {
-                        if(craftingSlots[x].itemInfo.itemData == recipes[y].requireditems[x])
+                        if(craftingSlots[x].itemInfo.itemData == recipes[y].requiredItems[x])
                         {
                             canBeCrafted += 1;
                         }
@@ -125,7 +125,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                 }
                 //checks to see if the inputted crafting items are correct
                 //and checks to see if the correct number 
-                if(canBeCrafted == recipes[y].requireditems.Count(s => s != null) && craftingSlots.Count() == recipes[y].requireditems.Count(s => s != null))
+                if(canBeCrafted == recipes[y].requiredItems.Count(s => s != null) && craftingSlots.Count() == recipes[y].requiredItems.Count(s => s != null))
                 {
                     //used to remove one of the items
                     for(int x = 0; x < craftingSlots.Count(); x++)

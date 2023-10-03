@@ -7977,6 +7977,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 751625406}
     m_Modifications:
+    - target: {fileID: 455926449647447570, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 954839373441934825, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1556808461905609567, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8175,6 +8183,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5765605904488119260, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965925275502021108, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7354539542183080908, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
