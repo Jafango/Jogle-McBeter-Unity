@@ -7,6 +7,8 @@ using System.Linq;
 using System;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+
 
 
 public class CraftingSystem : MonoBehaviour, IDropHandler
@@ -20,7 +22,8 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
 
     //gets the player inventory
     public Inventory playerInventory;
-
+    public GameObject player;
+        
     [SerializeField] public List<RecipeScriptableObject> recipes;
 
     //slot images is used to display the item that is put into the slots
@@ -30,6 +33,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     private static bool runItemReplace;
     //public string tempValue;
     public InventorySlot tempValue;
+    
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)
@@ -43,6 +47,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     private void Start()
     {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        player = GameObject.FindGameObjectWithTag("Player");
         amount = 0;
         runItemReplace = false;
         for(int i = 0; i < slotImages.Count; i++)
@@ -64,6 +69,12 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
             slotImages[amount].GetComponent<CraftingSlot>().DrawSlot(craftingSlots[amount].icon.sprite);
             amount = amount + 1;
             runItemReplace = false;
+        }
+
+        if(Input.GetKeyDown("tab"))
+        {
+            DontDestroyOnLoad(player.gameObject);
+            SceneManager.LoadScene("Test_Level", LoadSceneMode.Single);  
         }
     }
     
