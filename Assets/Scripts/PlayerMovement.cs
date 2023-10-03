@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject interactObject;
+    public Animator animator; 
     private Vector2 boxSize = new Vector2(0.1f, 1f);
     //Components
     Rigidbody2D rb;
@@ -55,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        animator.SetFloat("Horizontal", horizontalInput);
+        animator.SetFloat("Vertical", verticalInput);
+        animator.SetFloat("Speed", movementSpeed);
     }
 
     void FixedUpdate()
