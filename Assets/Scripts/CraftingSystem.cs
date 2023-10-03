@@ -121,17 +121,18 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
         {
             for(int y = 0; y < recipes.Count(); y++)
             {
-                Debug.Log("Hello: " + recipes[y].resultCraftedItem.ToString());
                 //for keeping track of if the craftingSlots matches any of the recipes
                 int canBeCrafted = 0;
                 for(int x = 0; x < craftingSlots.Count(); x++)
                 {
                     //these ifs are here to check if the crafting slot and recipe slot are null to prevent null errors
-                    if(craftingSlots[x] != null)
+                    if(craftingSlots[x] != null && recipes[y].requiredItems[x] != null)
                     {
                         if(craftingSlots[x].itemInfo.itemData == recipes[y].requiredItems[x])
                         {
                             canBeCrafted += 1;
+                            Debug.Log("can be crafted: " + canBeCrafted);
+
                         }
                     }
                 }
@@ -151,12 +152,9 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                     RemoveCurrentItems();
                     break;
                 }
-                else
-                {
-                    //TODO: add tooltip thats says no recipe
-                    RemoveCurrentItems();
-                }
             }
+            //TODO: add tooltip thats says no recipe
+            RemoveCurrentItems();
         }
         else
         {
