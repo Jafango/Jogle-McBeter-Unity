@@ -16,7 +16,6 @@ public class pickupTest : MonoBehaviour, ICollectable
         onTestItemCollected?.Invoke(itemData);
     }
 
-
     public void OnMouseEnter()
     {
         ToolTipManager._instance.SetAndShowToolTips(itemData.displayName, itemData.description);
