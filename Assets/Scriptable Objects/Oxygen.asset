@@ -15,4 +15,4 @@ MonoBehaviour:
   displayName: Oxygen
   description: Oxygen is Earth's most abundant element
   icon: {fileID: 20111966, guid: d69e31272ed70104aaed9d73966e74f0, type: 3}
-  amount: 1
+  amount: 4
