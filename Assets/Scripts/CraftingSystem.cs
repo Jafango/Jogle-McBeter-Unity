@@ -18,6 +18,8 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     //crafting slots is used for the crafting system to store the item information that are in the slots
     [SerializeField] public static List<InventorySlot> craftingSlots = new List<InventorySlot>();
 
+    [SerializeField] public List<RecipeScriptableObject> recipes;
+
     //slot images is used to display the item that is put into the slots
     [SerializeField] public List<GameObject> slotImages = new List<GameObject>(4);
     public static int amount = 0;
@@ -52,17 +54,9 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
 
     private void LateUpdate()
     {
-        if(slotImages[0] != null)
-        {
-            Debug.Log("slot image 0 is not null " + slotImages[0]);
-        }
         if(runItemReplace == true)
         {
-            Debug.Log("amount " + amount);
             slotImages[amount].GetComponent<CraftingSlot>().EnableSlot();
-            Debug.Log("crafting slot count " + craftingSlots.Count);
-            Debug.Log("inputted sprite " + craftingSlots[amount].icon.sprite);
-            Debug.Log("current slot sprite " + slotImages[amount].GetComponent<CraftingSlot>().icon.sprite);
             slotImages[amount].GetComponent<CraftingSlot>().DrawSlot(craftingSlots[amount].icon.sprite);
             amount = amount + 1;
             runItemReplace = false;
@@ -104,9 +98,42 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
         //Debug.Log("we here");
         slotImages[amount].GetComponent<CraftingSlot>().DrawSlot(iconSprite);
         //Debug.Log("inputted slot image " + slotImages[amount].GetComponent<CraftingSlot>().icon.sprite);
-        if(slotImages[amount].GetComponent<Image>() == true)
+    }
+
+    public void CraftItem()
+    {
+        if(craftingSlots.Count() > 0)
         {
-            //Debug.Log("slot images is enabled");
+            for(int y = 0; y < recipes.Count(); y++)
+            {
+                //for keeping track of if the craftingSlots matches any of the recipes
+                int canBeCrafted = 0;
+                for(int x = 0; x < craftingSlots.Count(); x++)
+                {
+                    //these ifs are here to check if the crafting slot and recipe slot are null to prevent null errors
+                    if(craftingSlots[x] != null)
+                    {
+                        if(craftingSlots[x].itemInfo.itemData == recipes[y].requireditems[x])
+                        {
+                            canBeCrafted += 1;
+                        }
+                    }
+                }
+                //checks to see if the inputted crafting items are correct
+                //and checks to see if the correct number 
+                if(canBeCrafted == recipes[y].requireditems.Count(s => s != null) && craftingSlots.Count() == recipes[y].requireditems.Count(s => s != null))
+                {
+                    Debug.Log("IT WORKSSSS");
+                }
+                else
+                {
+                    Debug.Log("IT DONT WORKRR");
+                }
+            }
+        }
+        else
+        {
+            //TODO: add ui popup that says cant craft without items dropped in
         }
     }
 

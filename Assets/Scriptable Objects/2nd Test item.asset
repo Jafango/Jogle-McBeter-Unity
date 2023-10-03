@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: 2nd Test item
   description: This is what happens when you add 2 apples
-  icon: {fileID: 595545049, guid: 86c4451c09949664491276bf11cb3b47, type: 3}
+  icon: {fileID: 1262628529, guid: f81bbb35f47ebf34a8b24be8a4df7199, type: 3}
   amount: 1
