@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87223106327f601408e0845bc93565b7, type: 3}
   m_Name: TestRecipe
   m_EditorClassIdentifier: 
-  requireditems:
+  requiredItems:
   - {fileID: 11400000, guid: a442bc8868351824bacaba59a52604a8, type: 2}
   - {fileID: 11400000, guid: 9cc4c1aceefc03e4788a3254d4629d29, type: 2}
   - {fileID: 0}

@@ -7,6 +7,8 @@ using System.Linq;
 using System;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+
 
 
 public class CraftingSystem : MonoBehaviour, IDropHandler
@@ -18,6 +20,10 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     //crafting slots is used for the crafting system to store the item information that are in the slots
     [SerializeField] public static List<InventorySlot> craftingSlots = new List<InventorySlot>();
 
+    //gets the player inventory
+    public Inventory playerInventory;
+    public GameObject player;
+        
     [SerializeField] public List<RecipeScriptableObject> recipes;
 
     //slot images is used to display the item that is put into the slots
@@ -27,6 +33,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     private static bool runItemReplace;
     //public string tempValue;
     public InventorySlot tempValue;
+    
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)
@@ -39,6 +46,8 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
     }
     private void Start()
     {
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        player = GameObject.FindGameObjectWithTag("Player");
         amount = 0;
         runItemReplace = false;
         for(int i = 0; i < slotImages.Count; i++)
@@ -60,6 +69,12 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
             slotImages[amount].GetComponent<CraftingSlot>().DrawSlot(craftingSlots[amount].icon.sprite);
             amount = amount + 1;
             runItemReplace = false;
+        }
+
+        if(Input.GetKeyDown("tab"))
+        {
+            DontDestroyOnLoad(player.gameObject);
+            SceneManager.LoadScene("Test_Level", LoadSceneMode.Single);  
         }
     }
     
@@ -113,7 +128,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                     //these ifs are here to check if the crafting slot and recipe slot are null to prevent null errors
                     if(craftingSlots[x] != null)
                     {
-                        if(craftingSlots[x].itemInfo.itemData == recipes[y].requireditems[x])
+                        if(craftingSlots[x].itemInfo.itemData == recipes[y].requiredItems[x])
                         {
                             canBeCrafted += 1;
                         }
@@ -121,13 +136,23 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                 }
                 //checks to see if the inputted crafting items are correct
                 //and checks to see if the correct number 
-                if(canBeCrafted == recipes[y].requireditems.Count(s => s != null) && craftingSlots.Count() == recipes[y].requireditems.Count(s => s != null))
+                if(canBeCrafted == recipes[y].requiredItems.Count(s => s != null) && craftingSlots.Count() == recipes[y].requiredItems.Count(s => s != null))
                 {
+                    //used to remove one of the items
+                    for(int x = 0; x < craftingSlots.Count(); x++)
+                    {
+                        //craftingSlots[x].itemInfo.RemoveFromStack();
+                        playerInventory.Remove(craftingSlots[x].itemInfo.itemData);
+                        //craftingSlots[x].UpdateCounter();
+                    }
                     Debug.Log("IT WORKSSSS");
+                    playerInventory.Add(recipes[y].resultCraftedItem);
+                    RemoveCurrentItems();
                 }
                 else
                 {
-                    Debug.Log("IT DONT WORKRR");
+                    //TODO: add tooltip thats says no recipe
+                    RemoveCurrentItems();
                 }
             }
         }

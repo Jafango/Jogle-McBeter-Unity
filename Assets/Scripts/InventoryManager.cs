@@ -13,7 +13,6 @@ public class InventoryManager : MonoBehaviour
     private void OnEnable()
     {
         Inventory.OnInventoryChange += DrawInventory;
-        Debug.Log("enabled");
     }
 
     private void OnDisable()
