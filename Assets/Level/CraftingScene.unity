@@ -533,12 +533,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
       propertyPath: recipes.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
       propertyPath: recipes.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: ed95f165cb76c7c4297fad896ce266e0, type: 2}
+    - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+      propertyPath: recipes.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 33fdd204dc5c05544997e7c79c8990c1, type: 2}
+    - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+      propertyPath: recipes.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: c640fedbc8dfc6a4eb4c42b34dc2ccd5, type: 2}
+    - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+      propertyPath: recipes.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ab7bf69e093f3c47854590d016759ab, type: 2}
     - target: {fileID: 469438457418883905, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

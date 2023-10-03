@@ -121,6 +121,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
         {
             for(int y = 0; y < recipes.Count(); y++)
             {
+                Debug.Log("Hello: " + recipes[y].resultCraftedItem.ToString());
                 //for keeping track of if the craftingSlots matches any of the recipes
                 int canBeCrafted = 0;
                 for(int x = 0; x < craftingSlots.Count(); x++)
@@ -148,11 +149,13 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
                     Debug.Log("IT WORKSSSS");
                     playerInventory.Add(recipes[y].resultCraftedItem);
                     RemoveCurrentItems();
+                    break;
                 }
                 else
                 {
                     //TODO: add tooltip thats says no recipe
                     RemoveCurrentItems();
+                    break;
                 }
             }
         }
@@ -169,6 +172,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
         for(int x = 0; x < slotImages.Count; x++)
         {
             slotImages[x].GetComponent<CraftingSlot>().ClearSlot();
+            
         }
     }
 }
