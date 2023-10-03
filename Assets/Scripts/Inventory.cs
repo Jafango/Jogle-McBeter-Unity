@@ -18,11 +18,17 @@ public class Inventory : MonoBehaviour
     private void OnEnable() {
         pickupTest.onTestItemCollected += Add;
         pickupTest2.onTest2ItemCollected += Add;
+        OxygenPickup.onOxygenCollected += Add;
+        SulphurPickup.onSulphurCollected += Add;
+        HyrogenPickup.onHyrogenCollected += Add;
     }
 
     private void OnDisable() {
         pickupTest.onTestItemCollected -= Add;
         pickupTest2.onTest2ItemCollected -= Add;
+        OxygenPickup.onOxygenCollected -= Add;
+        SulphurPickup.onSulphurCollected -= Add;
+        HyrogenPickup.onHyrogenCollected -= Add;
     }
 
     private void Start()
