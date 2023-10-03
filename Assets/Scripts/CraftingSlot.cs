@@ -8,6 +8,8 @@ public class CraftingSlot : MonoBehaviour
     public Image icon;
     public Sprite test;
 
+    public Slot slot;
+
     private void Start()
     {
         //icon = transform.GetChild(0).gameObject.GetComponent<Image>();
@@ -30,6 +32,7 @@ public class CraftingSlot : MonoBehaviour
         //icon.GetComponent<Image>().enabled = true;
         //icon.GetComponent<Image>().sprite = test;
         this.icon.sprite = tempSprite;
+        //this.slot = newSlot;
         //icon.GetComponent<Image>().enabled = true;
         //icon.SetActive(true);
         //icon.gameObject.SetActive(true);

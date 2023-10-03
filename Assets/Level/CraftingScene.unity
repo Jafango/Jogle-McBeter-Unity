@@ -183,9 +183,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 1
-  orthographic size: 6.137873
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 1054894429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.8331671, y: -0.6862293, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -486,22 +486,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
-      propertyPath: slotImages.Array.data[4]
-      value: 
-      objectReference: {fileID: 2799871214757278622}
-    - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
-      propertyPath: slotImages.Array.data[5]
-      value: 
-      objectReference: {fileID: 2799871214757278621}
-    - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
-      propertyPath: slotImages.Array.data[6]
-      value: 
-      objectReference: {fileID: 2799871214757278620}
-    - target: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
-      propertyPath: slotImages.Array.data[7]
+    - target: {fileID: 469438457418883905, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2799871214757278619}
+    - target: {fileID: 469438457418883905, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveCurrentItems
+      objectReference: {fileID: 0}
+    - target: {fileID: 469438457418883905, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CraftingSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 469438457418883905, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5208810216958359596, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -683,30 +683,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8047955239709536136, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+    - {fileID: 818914701214026185, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
---- !u!1 &2799871214757278619 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2243156591705454128, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
+--- !u!114 &2799871214757278619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 110989186296242356, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
   m_PrefabInstance: {fileID: 2799871214757278618}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2799871214757278620 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 922246924935151767, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
-  m_PrefabInstance: {fileID: 2799871214757278618}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2799871214757278621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8500374017383129352, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
-  m_PrefabInstance: {fileID: 2799871214757278618}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2799871214757278622 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 371511849718081659, guid: 183720f7fb1f5db48b547cef2f8e1838, type: 3}
-  m_PrefabInstance: {fileID: 2799871214757278618}
-  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfa6d8f9722bef44ae9b7918ff87823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

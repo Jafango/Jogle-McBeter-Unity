@@ -11,9 +11,14 @@ using Unity.VisualScripting;
 
 public class CraftingSystem : MonoBehaviour, IDropHandler
 {
-    public List<RecipeScriptableObject> recipeScriptable;
+    //REMEMBER MAKE EVERY STATIC
+    public static List<RecipeScriptableObject> recipeScriptable;
     //[SerializeField] public List<string> craftingSlots = new List<string>();
+
+    //crafting slots is used for the crafting system to store the item information that are in the slots
     [SerializeField] public static List<InventorySlot> craftingSlots = new List<InventorySlot>();
+
+    //slot images is used to display the item that is put into the slots
     [SerializeField] public List<GameObject> slotImages = new List<GameObject>(4);
     public static int amount = 0;
     private static bool itemIn;
@@ -47,6 +52,10 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
 
     private void LateUpdate()
     {
+        if(slotImages[0] != null)
+        {
+            Debug.Log("slot image 0 is not null " + slotImages[0]);
+        }
         if(runItemReplace == true)
         {
             Debug.Log("amount " + amount);
@@ -101,8 +110,13 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
         }
     }
 
-    public void RemoveCurrentItem()
+    public void RemoveCurrentItems()
     {
-
+        craftingSlots.Clear();
+        amount = 0;
+        for(int x = 0; x < slotImages.Count; x++)
+        {
+            slotImages[x].GetComponent<CraftingSlot>().ClearSlot();
+        }
     }
 }
