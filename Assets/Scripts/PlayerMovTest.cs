@@ -10,6 +10,22 @@ public class PlayerMovTest : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
+    //sprint
+
+    [Header("Sprint")]
+    [Tooltip("player sprint speed multiplier")]
+    public float sprintMultiplier = 2f;
+    [Tooltip("this is the max amount of time the player can sprint for")]
+    public float maxSprintLength = 3f;
+    [Tooltip("this is the length of the sprint")]
+    public float sprintLength = 3f;
+    [Tooltip("this is the max amount of time it takes for the player to regenerate their sprint")]
+    public float maxRegenerateSprintLength = 0.5f;
+    [Tooltip("this is the time it takes to regenerate the sprint")]
+    public float regenerateSprintLength = 0.5f;
+    [Tooltip("this is how fast the sprint regenerates (keep this value low (0.05 - 0.10))")]
+    public float regenerateSprintAmount = 0.05f;
+
      // Animations and states
     public Animator animator; 
     string currentAnimState;
@@ -18,6 +34,10 @@ public class PlayerMovTest : MonoBehaviour
     const string PLAYER_DOWN = "Player_down";
     const string PLAYER_LEFT = "Player_left";
     const string PLAYER_RIGHT = "Player_Right";
+
+    [Header("Player smoother")]
+    [Tooltip("this is how smooth the player movement is (keep this value really low (0.005 to 0.05))")]
+    public float lerpAmount = 0.05f;
 
     Rigidbody2D rb;
 

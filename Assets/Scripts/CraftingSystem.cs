@@ -74,7 +74,7 @@ public class CraftingSystem : MonoBehaviour, IDropHandler
         if(Input.GetKeyDown("tab"))
         {
             DontDestroyOnLoad(player.gameObject);
-            SceneManager.LoadScene("Test_Level", LoadSceneMode.Single);  
+            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);         
         }
     }
     
