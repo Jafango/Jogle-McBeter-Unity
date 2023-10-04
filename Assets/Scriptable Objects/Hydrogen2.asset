@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Hydrogen2
   description: Two atoms of Hydrogen
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 8f3ec84909879e04f8830be1bce3b26c, type: 3}
   amount: 1

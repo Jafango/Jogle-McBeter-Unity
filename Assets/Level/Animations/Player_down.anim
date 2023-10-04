@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Movement
+  m_Name: Player_down
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,17 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
+      value: {fileID: 21300000, guid: 4ca02e9af77eb09489b7f974c1622956, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: 8d5f8e0e516fd424ea48141d7b9c3188, type: 3}
+    - time: 0.33333334
       value: {fileID: 21300000, guid: f35f5c6cda4ec514eb7b52d92c666090, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 2
+  m_SampleRate: 6
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -44,6 +48,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
+    - {fileID: 21300000, guid: 4ca02e9af77eb09489b7f974c1622956, type: 3}
+    - {fileID: 21300000, guid: 8d5f8e0e516fd424ea48141d7b9c3188, type: 3}
     - {fileID: 21300000, guid: f35f5c6cda4ec514eb7b52d92c666090, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2

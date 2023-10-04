@@ -1,15 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Video;
 
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject interactObject;
-    public Animator animator; 
+  
     private Vector2 boxSize = new Vector2(0.1f, 1f);
     //Components
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     //Player
     [Header("Player Movement")]
@@ -17,7 +19,17 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 4f;
     float horizontalInput;
     float verticalInput;
-    
+
+    // Animations and states
+    public Animator animator; 
+    string currentAnimState;
+    const string PLAYER_IDLE = "Player_Idle";
+    const string PLAYER_UP = "Player_up";
+    const string PLAYER_DOWN = "Player_down";
+    const string PLAYER_LEFT = "Player_left";
+    const string PLAYER_RIGHT = "Player_Right";
+
+
     //Sprint
     [Header("Sprint")]
     [Tooltip("player sprint speed multiplier")]
@@ -45,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
         interactObject.SetActive(false);
     }
 
@@ -56,10 +69,6 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-
-        animator.SetFloat("Horizontal", horizontalInput);
-        animator.SetFloat("Vertical", verticalInput);
-        animator.SetFloat("Speed", movementSpeed);
     }
 
     void FixedUpdate()
@@ -69,10 +78,24 @@ public class PlayerMovement : MonoBehaviour
             regenerateSprintLength = maxRegenerateSprintLength;
             sprintLength -= Time.deltaTime;
             rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(horizontalInput, verticalInput).normalized * (movementSpeed * sprintMultiplier), lerpAmount);
+            
+            if (horizontalInput > 0) {
+                ChangeAnimationState(PLAYER_RIGHT);
+            }
+            else if (horizontalInput < 0) {
+                ChangeAnimationState(PLAYER_LEFT);
+            }
+            else if (verticalInput > 0) {
+                ChangeAnimationState(PLAYER_UP);
+            }
+            else if (verticalInput < 0) {
+                ChangeAnimationState(PLAYER_DOWN);
+            }
         }
         else
         {
             rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(horizontalInput, verticalInput).normalized * movementSpeed, lerpAmount);
+            ChangeAnimationState(PLAYER_IDLE);
         }
 
         if(!Input.GetButton("Fire1"))
@@ -89,6 +112,14 @@ public class PlayerMovement : MonoBehaviour
                 regenerateSprintLength -= Time.deltaTime;
             }
         }
+    }
+    // Animation change state
+    void ChangeAnimationState(string newState){
+        if(currentAnimState == newState) return;
+
+        animator.Play(newState);
+
+        currentAnimState = newState;
     }
     public void OpenInteractableIcon()
     {

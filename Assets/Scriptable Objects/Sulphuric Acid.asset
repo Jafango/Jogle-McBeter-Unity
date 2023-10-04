@@ -16,5 +16,5 @@ MonoBehaviour:
   description: "Sulfuric acid or sulphuric acid, known in antiquity as oil of vitriol,
     is a mineral acid composed of the elements sulfur, oxygen, and hydrogen, with
     the molecular formula H\u2082SO\u2084."
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 71ea9f781ce14b7469ce57abb9f62765, type: 3}
   amount: 1

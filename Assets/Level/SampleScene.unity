@@ -274,7 +274,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -11386,7 +11386,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -15578,7 +15578,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -94385,7 +94385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2100343434}
   - component: {fileID: 2100343435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96901,6 +96901,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 771169599825909801, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 7167707906276315769}
+    - target: {fileID: 771169599825909801, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: lightOB
       value: 
       objectReference: {fileID: 0}
@@ -96908,6 +96912,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 7167707906276315767}
+    - target: {fileID: 771169599825909801, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 771169599825909801, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: interactObject
       value: 
@@ -96922,15 +96930,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4184970128541443503, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4184970128541443503, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4184970128541443503, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4184970128541443503, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -96982,7 +96990,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: fc6714ce3fe5e8e44b4f1f49b4932fe6, type: 2}
     - target: {fileID: 5889375875398056866, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6776381274162734181, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_LocalScale.x
@@ -96996,13 +97004,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6803756427205871939, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       propertyPath: m_IsActive
@@ -97017,13 +97029,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       insertIndex: 2
-      addedObject: {fileID: 7167707906276315768}
+      addedObject: {fileID: 7167707906276315773}
     - targetCorrespondingSourceObject: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7167707906276315767}
     - targetCorrespondingSourceObject: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7167707906276315766}
+    - targetCorrespondingSourceObject: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7167707906276315774}
     - targetCorrespondingSourceObject: {fileID: 5889375875398056866, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1164423959}
@@ -97073,7 +97088,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: f35f5c6cda4ec514eb7b52d92c666090, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97106,8 +97121,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &7167707906276315768
-BoxCollider2D:
+--- !u!50 &7167707906276315769 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6803756427205871939, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
+  m_PrefabInstance: {fileID: 7167707906276315759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7167707906276315773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135524453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7145ddda1d264246952be1c0d4d79b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 4
+  speedLimiter: 0.7
+  animator: {fileID: 7167707906276315767}
+--- !u!70 &7167707906276315774
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -97138,19 +97173,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000013969839, y: -0.04455927}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 0.5, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.13503775, y: 0.16050085}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: -0.3981762}
+  m_Size: {x: 0.7457428, y: 0.7457428}
+  m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
