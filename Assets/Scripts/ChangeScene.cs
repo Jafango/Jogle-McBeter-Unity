@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TestScript : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
     // Update is called once per frame
     void Update()

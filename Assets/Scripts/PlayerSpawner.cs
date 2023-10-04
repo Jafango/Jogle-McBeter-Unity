@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] public GameObject player;
     public Transform playerSpawn;
