@@ -7426,7 +7426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitPosition: {fileID: 1986038964}
   player: {fileID: 0}
-  door: {fileID: 0}
+  door: {fileID: 96343857}
 --- !u!1 &107490994
 GameObject:
   m_ObjectHideFlags: 0
@@ -33631,15 +33631,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689777702626306167, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8043
+      value: 1.2301898
       objectReference: {fileID: 0}
     - target: {fileID: 2689777702626306167, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.8043
+      value: 1.2301898
       objectReference: {fileID: 0}
     - target: {fileID: 2689777702626306167, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.8043
+      value: 1.2301898
       objectReference: {fileID: 0}
     - target: {fileID: 2689777702626306167, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33671,11 +33671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689777702626306167, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 482
+      value: 314
       objectReference: {fileID: 0}
     - target: {fileID: 2689777702626306167, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 2689777702626306167, guid: 479fe1cc8d8f09e41ad30206d6eba8c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -34482,7 +34482,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.002
+  m_Intensity: 0.005
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: afce64fd00000000

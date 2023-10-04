@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     private void Start()
     {
         inTrigger = false;
+        player = GameObject.FindGameObjectWithTag("Player");
         //player = GameObject.FindGameObjectWithTag("Player");
     }
 

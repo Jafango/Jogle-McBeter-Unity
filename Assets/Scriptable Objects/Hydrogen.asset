@@ -15,4 +15,4 @@ MonoBehaviour:
   displayName: Hydrogen
   description: Hydrogen is the most common chemical element in the universe
   icon: {fileID: 21300000, guid: 94d69cc7cb3a95e49890aae376e7d764, type: 3}
-  amount: 1
+  amount: 4

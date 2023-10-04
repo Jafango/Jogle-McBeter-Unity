@@ -15,4 +15,4 @@ MonoBehaviour:
   displayName: Sulphur
   description: Nonmetallic chemical element belonging to the oxygen group
   icon: {fileID: 21300000, guid: 74104c9243c85a046a442623ba3d334f, type: 3}
-  amount: 1
+  amount: 4
