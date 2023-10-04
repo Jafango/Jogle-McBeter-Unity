@@ -62,9 +62,33 @@ public class PlayerMovTest : MonoBehaviour
                 horizontalInput *= speedLimiter;
                 verticalInput *= speedLimiter;
             }
+                    
+                    
+            if(Input.GetButton("Fire1") && sprintLength > 0f)
+            {
+                regenerateSprintLength = maxRegenerateSprintLength;
+                sprintLength -= Time.deltaTime;
+                rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(horizontalInput, verticalInput).normalized * (movementSpeed * sprintMultiplier), lerpAmount);
+            }
+            else
+            {
+                rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(horizontalInput, verticalInput).normalized * movementSpeed, lerpAmount);
+            }
 
-            rb.velocity = new Vector2(horizontalInput * movementSpeed, verticalInput * movementSpeed);
-
+            if(!Input.GetButton("Fire1"))
+            {
+                if(regenerateSprintLength <= 0f)
+                {
+                    if(sprintLength <= maxSprintLength)
+                    {
+                        sprintLength += (Time.deltaTime + regenerateSprintAmount);
+                    }
+                }
+                else
+                {
+                    regenerateSprintLength -= Time.deltaTime;
+                }
+            }
             if (horizontalInput > 0) {
                 ChangeAnimationState(PLAYER_RIGHT);
             }
