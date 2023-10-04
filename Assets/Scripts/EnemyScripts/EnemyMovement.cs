@@ -15,6 +15,12 @@ public class EnemyMovement : MonoBehaviour
     public float speed;
     //[SerializeField] private float spottedRange = 15f;
 
+    public void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").gameObject.transform;
+    }
+
+
     void Update()
     {
         gapRange = Vector2.Distance(transform.position, target.transform.position);
@@ -24,7 +30,20 @@ public class EnemyMovement : MonoBehaviour
         if (gapRange > 5)
         {
             speed = 4;
-            EnemyMovePoint(pointA);
+            for (int i = 0; i < 4; i++)
+            {
+                currentPoint = transform;
+
+                if (currentPoint.position != pointA.position)
+                {
+                    EnemyMovePoint(pointA);
+                }
+                if(currentPoint.position == pointA.position)
+                {
+                    EnemyMovePoint(pointA);
+                }
+
+            }
         }
         else if (gapRange < 5)
         {
