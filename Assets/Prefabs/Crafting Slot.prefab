@@ -319,8 +319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000047684}
-  m_SizeDelta: {x: 50, y: 11.45}
+  m_AnchoredPosition: {x: 0, y: -0.000021338}
+  m_SizeDelta: {x: 100, y: 22.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2306212477416593104
 CanvasRenderer:
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17
+  m_fontSize: 13
   m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -525,7 +525,7 @@ RectTransform:
   m_GameObject: {fileID: 9002427425804032590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.31058, y: 1.31058, z: 1.31058}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3449287866849058130}
@@ -601,6 +601,7 @@ MonoBehaviour:
   player: {fileID: 8829442297038619060, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
   inventory: {fileID: 6568420332036442392, guid: e3790e1f42ee6e347be090c92e11a9ab, type: 3}
   slotCopy: {fileID: 6028656889938217613, guid: 820cd76e8eb03354d9e1ed40c2efbb8d, type: 3}
+  dontCopySlot: {fileID: 0}
   craftingSystem: {fileID: 1639057962453342642, guid: d090702896521f14f9902daa64be01ba, type: 3}
 --- !u!61 &2778994613945744094
 BoxCollider2D:
