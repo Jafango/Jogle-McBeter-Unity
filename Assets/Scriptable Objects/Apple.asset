@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   displayName: Apple
-  description: Just some apple
-  icon: {fileID: 945400054, guid: 86c4451c09949664491276bf11cb3b47, type: 3}
+  description: Just Some Apples
+  icon: {fileID: 1513908626, guid: c493380f2aea42f4b9e6471640633a90, type: 3}
   amount: 2

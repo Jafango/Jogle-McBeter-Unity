@@ -49,5 +49,9 @@ public class InventorySlot : MonoBehaviour
     public void UpdateCounter()
     {
         stackSizeText.text = itemInfo.objectCounter.ToString();
+        if(itemInfo.objectCounter == 0)
+        {
+            ClearSlot();
+        }
     }
 }

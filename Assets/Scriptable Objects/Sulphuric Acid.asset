@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d744e1d8c9045bfbfe682f7b5e0df4, type: 3}
+  m_Name: Sulphuric Acid
+  m_EditorClassIdentifier: 
+  displayName: Sulphuric Acid
+  description: "Sulfuric acid or sulphuric acid, known in antiquity as oil of vitriol,
+    is a mineral acid composed of the elements sulfur, oxygen, and hydrogen, with
+    the molecular formula H\u2082SO\u2084."
+  icon: {fileID: 21300000, guid: 71ea9f781ce14b7469ce57abb9f62765, type: 3}
+  amount: 1

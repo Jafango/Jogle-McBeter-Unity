@@ -13,7 +13,6 @@ public class InventoryManager : MonoBehaviour
     private void OnEnable()
     {
         Inventory.OnInventoryChange += DrawInventory;
-        Debug.Log("enabled");
     }
 
     private void OnDisable()
@@ -28,7 +27,7 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(childTransform.gameObject);
         }
-        inventorySlots = new List<InventorySlot>(9);
+        inventorySlots = new List<InventorySlot>(8);
     }
 
     void DrawInventory(List<Slot> slot)

@@ -1,11 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Video;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject interactObject;
+  
+    private Vector2 boxSize = new Vector2(0.1f, 1f);
     //Components
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     //Player
     [Header("Player Movement")]
@@ -13,7 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 4f;
     float horizontalInput;
     float verticalInput;
-    
+
+   
+
+
     //Sprint
     [Header("Sprint")]
     [Tooltip("player sprint speed multiplier")]
@@ -41,11 +50,15 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        interactObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E))
+            CheckInteraction();
+
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
     }
@@ -77,5 +90,29 @@ public class PlayerMovement : MonoBehaviour
                 regenerateSprintLength -= Time.deltaTime;
             }
         }
+    }
+
+    public void OpenInteractableIcon()
+    {
+        interactObject.SetActive(true);
+    }
+
+    public void CloseInteractableIcon()
+    {
+        interactObject.SetActive(false);
+    }
+
+    private void CheckInteraction()
+    {
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, boxSize,0, Vector2.zero);
+        if(hits.Length > 0)
+            foreach(RaycastHit2D rc in hits)
+            {
+                if (rc.transform.GetComponent<Interactable>())
+                {
+                    rc.transform.GetComponent<Interactable>().Interact();
+                    return;
+                }
+            }
     }
 }

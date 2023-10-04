@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1852937033609906635}
   - component: {fileID: 3663576430054168720}
   - component: {fileID: 7414297476353068803}
+  - component: {fileID: 8533568037500458095}
   m_Layer: 5
   m_Name: Slot Copy
-  m_TagString: Untagged
+  m_TagString: CraftingSlotCopy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,6 +91,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotImage: {fileID: 1852937033609906635}
+  slot:
+    itemData: {fileID: 0}
+    objectCounter: 0
+  canvasGroup: {fileID: 8533568037500458095}
+  craftingSystem: {fileID: 1639057962453342642, guid: d090702896521f14f9902daa64be01ba, type: 3}
 --- !u!61 &7414297476353068803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,3 +141,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!225 &8533568037500458095
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028656889938217613}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
