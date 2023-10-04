@@ -5,7 +5,12 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private GameObject detectionZone;
+    [SerializeField] private Transform pointA;
+    [SerializeField] private Transform pointB;
+    [SerializeField] private Transform pointC;
+    [SerializeField] private Transform pointD;
+    private Transform currentPoint;
+
     private float gapRange;
     public float speed;
     //[SerializeField] private float spottedRange = 15f;
@@ -19,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
         if (gapRange > 5)
         {
             speed = 4;
+            EnemyMovePoint(pointA);
         }
         else if (gapRange < 5)
         {
@@ -29,13 +35,15 @@ public class EnemyMovement : MonoBehaviour
 
     void EnemyMove()
     {
+        gapRange = Vector2.Distance(transform.position, target.transform.position);
+
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
 
 
-        float AngleTarget = Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x);
-        float AngleRotate = (180 / Mathf.PI) * AngleTarget;
-
-        this.transform.rotation = Quaternion.Euler(0, 0, AngleRotate);
+    void EnemyMovePoint(Transform firstTarget)
+    {
+        transform.position = Vector2.MoveTowards(transform.position, firstTarget.transform.position, speed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
